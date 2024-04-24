@@ -1,1 +1,1 @@
-# capacitor-screenshot-detection
+# capacitor-screenshot
