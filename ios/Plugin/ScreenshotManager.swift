@@ -5,4 +5,11 @@ import Foundation
         print(value)
         return value
     }
+
+    @objc public func ping(message: String) -> String {
+    print("Ping: \(message)")
+    return "Pong"
 }
+}
+
+

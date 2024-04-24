@@ -15,4 +15,15 @@ public class ScreenshotManagerPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+
+    @objc func ping(_ call: CAPPluginCall) {
+        let message = call.getString("message") ?? "No message"
+        let response = implementation.ping(message: message)
+        
+        call.resolve([
+            "response": response
+        ])
+    }
 }
+
+
