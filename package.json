@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-screenshot",
+  "name": "capacitor-screenshot-manager",
   "version": "0.0.1",
   "description": "Plugin to manage screenshot on Ios and Android",
   "main": "dist/plugin.cjs.js",
@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cardozo/capacitor-screenshot-detection.git"
+    "url": "git+https://github.com/cardozo/capacitor-screenshot-manager.git"
   },
   "bugs": {
-    "url": "https://github.com/cardozo/capacitor-screenshot-detection/issues"
+    "url": "https://github.com/cardozo/capacitor-screenshot-manager/issues"
   },
   "keywords": [
     "capacitor",

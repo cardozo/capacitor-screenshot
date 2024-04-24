@@ -1,11 +1,11 @@
-# capacitor-screenshot
+# capacitor-screenshot-manager
 
 Plugin to manage screenshot on Ios and Android
 
 ## Install
 
 ```bash
-npm install capacitor-screenshot
+npm install capacitor-screenshot-manager
 npx cap sync
 ```
 
