@@ -14,7 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
-* [`ping()`](#ping)
+* [`ping(...)`](#ping)
 
 </docgen-index>
 
@@ -36,13 +36,17 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 --------------------
 
 
-### ping()
+### ping(...)
 
 ```typescript
-ping() => Promise<{ value: string; }>
+ping(options: { message: string; }) => Promise<{ response: string; }>
 ```
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ message: string; }</code> |
+
+**Returns:** <code>Promise&lt;{ response: string; }&gt;</code>
 
 --------------------
 

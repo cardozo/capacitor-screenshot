@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.name = 'CapacitorScreenshot'
   s.version = package['version']
   s.summary = package['description']
-  s.license = package['license']
+  s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage = package['repository']['url']
   s.author = package['author']
   s.source = { :git => package['repository']['url'], :tag => s.version.to_s }
