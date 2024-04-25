@@ -20,7 +20,6 @@ import Foundation
 
     @objc func screenshotTaken() {
         print("Screenshot taken!")
-        // Aqui você pode executar qualquer lógica adicional quando um screenshot é tirado
     }
     
     @objc public func echo(_ value: String) -> String {
