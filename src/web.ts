@@ -20,6 +20,7 @@ export class ScreenshotManagerWeb extends WebPlugin implements ScreenshotManager
     // Pode ser um stub ou implementação simulada
     console.log('screenshot detection');
     console.warn('Screenshot detection not available on web');
+    callback({ message: 'Screenshot detection not available on web' });
   }
 
 }

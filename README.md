@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`ping(...)`](#ping)
+* [`addScreenshotListener(...)`](#addscreenshotlistener)
 
 </docgen-index>
 
@@ -47,6 +48,19 @@ ping(options: { message: string; }) => Promise<{ response: string; }>
 | **`options`** | <code>{ message: string; }</code> |
 
 **Returns:** <code>Promise&lt;{ response: string; }&gt;</code>
+
+--------------------
+
+
+### addScreenshotListener(...)
+
+```typescript
+addScreenshotListener(callback: (info: any) => void) => Promise<void>
+```
+
+| Param          | Type                                |
+| -------------- | ----------------------------------- |
+| **`callback`** | <code>(info: any) =&gt; void</code> |
 
 --------------------
 
