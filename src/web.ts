@@ -17,9 +17,7 @@ export class ScreenshotManagerWeb extends WebPlugin implements ScreenshotManager
   }
 
   async addScreenshotListener(callback: (info: any) => void): Promise<void> {
-    // Pode ser um stub ou implementação simulada
-    console.log('screenshot detection');
-    console.warn('Screenshot detection not available on web');
+  
     callback({ message: 'Screenshot detection not available on web' });
   }
 
