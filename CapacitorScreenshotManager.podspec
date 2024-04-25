@@ -3,7 +3,7 @@ require 'json'
 package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
 Pod::Spec.new do |s|
-  s.name = 'CapacitorScreenshot'
+  s.name = 'CapacitorScreenshotManager'
   s.version = package['version']
   s.summary = package['description']
   s.license = { :type => 'MIT', :file => 'LICENSE' }
