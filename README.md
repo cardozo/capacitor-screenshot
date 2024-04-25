@@ -9,6 +9,22 @@ npm install capacitor-screenshot-manager
 npx cap sync
 ```
 
+## Usage Android
+```bash
+import { Plugins } from '@capacitor/core';
+
+const { ScreenshotManager } = Plugins;
+
+async function disableScreenshots() {
+  await ScreenshotManager.blockScreenshots();
+}
+
+async function enableScreenshots() {
+  await ScreenshotManager.allowScreenshots();
+}
+```
+
+
 ## API
 
 <docgen-index>
