@@ -20,6 +20,7 @@ import Foundation
 
     @objc func screenshotTaken() {
         print("Screenshot taken!")
+        self.bridge?.notifyListeners("screenshotEvent", data: ["message": "Screenshot taken!"])
     }
     
     @objc public func echo(_ value: String) -> String {
