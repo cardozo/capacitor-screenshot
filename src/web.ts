@@ -2,9 +2,7 @@ import { WebPlugin } from '@capacitor/core';
 
 import type { ScreenshotManagerPlugin } from './definitions';
 
-export class ScreenshotManagerWeb
-  extends WebPlugin
-  implements ScreenshotManagerPlugin
+export class ScreenshotManagerWeb extends WebPlugin implements ScreenshotManagerPlugin
 {
   async echo(options: { value: string }): Promise<{ value: string }> {
     console.log('ECHO', options);
@@ -17,4 +15,11 @@ export class ScreenshotManagerWeb
     // Implemente aqui a lógica que você deseja executar quando o ping for chamado.
     return Promise.resolve({ response: 'pong' });
   }
+
+  async addScreenshotListener(callback: (info: any) => void): Promise<void> {
+    // Pode ser um stub ou implementação simulada
+    console.log('screenshot detection');
+    console.warn('Screenshot detection not available on web');
+  }
+
 }
