@@ -32,6 +32,8 @@ async function enableScreenshots() {
 * [`echo(...)`](#echo)
 * [`ping(...)`](#ping)
 * [`addScreenshotListener(...)`](#addscreenshotlistener)
+* [`addListener('screenshotEvent', ...)`](#addlistenerscreenshotevent-)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -79,6 +81,32 @@ addScreenshotListener(callback: (info: any) => void) => Promise<void>
 | **`callback`** | <code>(info: any) =&gt; void</code> |
 
 --------------------
+
+
+### addListener('screenshotEvent', ...)
+
+```typescript
+addListener(eventName: 'screenshotEvent', listenerFunc: (info: any) => void) => Promise<PluginListenerHandle>
+```
+
+| Param              | Type                                |
+| ------------------ | ----------------------------------- |
+| **`eventName`**    | <code>'screenshotEvent'</code>      |
+| **`listenerFunc`** | <code>(info: any) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>
 
