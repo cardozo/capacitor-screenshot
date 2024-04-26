@@ -1,6 +1,6 @@
 # capacitor-screenshot-manager
 
-Plugin to manage screenshot on Ios and Android
+Plugin to manage screenshot on Ios ( detect event ) and Android ( block screenshot )
 
 ## Install
 
@@ -22,6 +22,15 @@ async function disableScreenshots() {
 async function enableScreenshots() {
   await ScreenshotManager.allowScreenshots();
 }
+```
+
+## Usage IOS
+```bash
+import { ScreenshotManager } from 'capacitor-screenshot-manager';
+
+ScreenshotManager.addListener('screenshotEvent', (info: any) => {
+      console.log(' ---- Screenshot event received:', info);
+});
 ```
 
 
