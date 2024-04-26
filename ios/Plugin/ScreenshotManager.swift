@@ -1,9 +1,9 @@
 import UIKit
-import Foundation
+import Capacitor
 
-@objc public class ScreenshotManager: NSObject {
-    override init() {
-        super.init()
+@objc(ScreenshotManager)
+public class ScreenshotManager: CAPPlugin {
+    override public func load() {
         // Registrar para notificações de screenshot
         NotificationCenter.default.addObserver(
             self,
@@ -20,16 +20,22 @@ import Foundation
 
     @objc func screenshotTaken() {
         print("Screenshot taken!")
-        self.bridge?.notifyListeners("screenshotEvent", data: ["message": "Screenshot taken!"])
-    }
-    
-    @objc public func echo(_ value: String) -> String {
-        print(value)
-        return value
+        self.notifyListeners("screenshotEvent", data: ["message": "Screenshot taken!"])
     }
 
-    @objc public func ping(message: String) -> String {
+    @objc func echo(_ call: CAPPluginCall) {
+        let value = call.getString("value") ?? ""
+        print(value)
+        call.resolve([
+            "value": value
+        ])
+    }
+
+    @objc func ping(_ call: CAPPluginCall) {
+        let message = call.getString("message") ?? ""
         print("Ping: \(message)")
-        return "Pong"
+        call.resolve([
+            "response": "Pong"
+        ])
     }
 }

@@ -1,29 +1,42 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(ScreenshotManagerPlugin)
 public class ScreenshotManagerPlugin: CAPPlugin {
-    private let implementation = ScreenshotManager()
+    
+    override public func load() {
+        // Registrar para notificações de screenshot
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(screenshotTaken),
+            name: UIApplication.userDidTakeScreenshotNotification,
+            object: nil
+        )
+    }
+
+    deinit {
+        // Remover o observador quando a instância é desalocada
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc func screenshotTaken() {
+        print("Screenshot taken!")
+        self.notifyListeners("screenshotEvent", data: ["message": "Screenshot taken!"])
+    }
 
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
+        print(value)
         call.resolve([
-            "value": implementation.echo(value)
+            "value": value
         ])
     }
 
     @objc func ping(_ call: CAPPluginCall) {
-        let message = call.getString("message") ?? "No message"
-        let response = implementation.ping(message: message)
-        
+        let message = call.getString("message") ?? ""
+        print("Ping: \(message)")
         call.resolve([
-            "response": response
+            "response": "Pong"
         ])
     }
 }
-
-
