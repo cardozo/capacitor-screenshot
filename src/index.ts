@@ -11,4 +11,5 @@ const ScreenshotManager = registerPlugin<ScreenshotManagerPlugin>(
 
 export * from './definitions';
 export { ScreenshotManager };
-export { ScreenshotManagerPlugin };
+
+
